@@ -1,0 +1,14 @@
+body{
+    background-color: brown;
+}
+#cadastro{
+    padding: 5px;
+    margin: 40px 300px;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+}
+#cadastro p{
+    text-align: left;
+    margin: 10px 170px ;
+}
