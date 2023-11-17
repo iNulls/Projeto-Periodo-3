@@ -69,11 +69,11 @@ function ValidaNomeRegex(nome){
 	const nomeRegex = new RegExp(/^[a-zA-Z\s]{3,60}$/,"");
 	
 	if (nomeRegex.test(nome)){
-		alert("Nome Válido Kryptoniano")
+		alert("Nome Valido")
 		return true;
 	}
 	else{
-		alert("O nome é  invalidado");
+		alert("O nome é invalidado");
 		return false;
 	}
 

@@ -257,6 +257,7 @@ ul{
 .graf{
     max-width: 740px;
 }
+
 /*mapa*/
 .image{
     width: 100%;
@@ -289,6 +290,13 @@ ul{
     opacity: 1;
   }
   
+  .cont{
+    display: flex;
+    justify-content: space-around;
+    font-size:20px;
+    margin: 50px;
+  }
+  
   .text {
     color: rgb(29, 35, 214);
     font-size: 20px;
@@ -300,8 +308,13 @@ ul{
   } 
 h1{
     font-family: sans-serif;
+    font-size: 35px;
 }
 
 h2{
     font-family: serif;
+    font-size: 25px;
+}
+h4{
+    font-size: 20px;
 }
