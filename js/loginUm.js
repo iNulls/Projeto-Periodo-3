@@ -2,7 +2,7 @@ const form= document.getElementById('form')
 const usuarioInput= document.getElementById('usuario')
 const senhaInput=document.getElementById('senha')
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("logar", (event) => {
   event.preventDefault();
 
   checkForm();

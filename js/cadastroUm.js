@@ -15,7 +15,7 @@ const confirmaSenhaInput= document.getElementById('confirmar')
 const modal = document.querySelector('dialog')
 const buttonClose=document.querySelector('dialog button')
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("salvar", (event) => {
   event.preventDefault();
 
   checkForm();
@@ -26,7 +26,7 @@ nome.addEventListener("blur", () => {
   ValidarNome();
 })
 
-data.addEventListener("blur", () => {
+dataNascimento.addEventListener("blur", () => {
   ValidarDataNascimento();
 })
 
@@ -71,7 +71,7 @@ senha.addEventListener("blur", () => {
   ValidarSenha();
 })
 
-confirma.addEventListener("blur", () => {
+confirmar.addEventListener("blur", () => {
   ValidarConfirmacaoSenha();;
 })
 
@@ -193,12 +193,8 @@ function ValidaCpf(cpf){
 function ValidarTelefoneFixo(){
   const telefoneFixoValue = telefoneFixoInput.value;
 
-  if(telefoneFixoValue === ""){
-    errorInput(telefoneFixoInput, "O telefone fixo é obrigatório.")
-  }else{
-    const formItem = telefoneFixoInput.parentElement;
-    formItem.className = "form-content"
-  }
+  const formItem = telefoneFixoInput.parentElement;
+  formItem.className = "form-content"
 
 }
 
@@ -351,3 +347,10 @@ function CloseModal(){
       modal.close();
     }
 }
+
+// Salvar LocalStorage //
+
+function salvar() {
+      localStorage.setItem("usuario", document.querySelector("#usuario").value);
+      localStorage.setItem("senha", document.querySelector("#senha").value);
+    }

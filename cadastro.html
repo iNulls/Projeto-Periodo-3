@@ -58,7 +58,7 @@
 
                 <div class="form-content">
                     <label> Telefone fixo</label>
-                    <input type="tel" id="telefone"  name="fixo" placeholder="digite o seu telefone fixo"> 
+                    <input type="tel" id="telefoneFixo"  name="fixo" placeholder="digite o seu telefone fixo"> 
                     <a> Aqui aparecerá a mensageem de erro</a>   
                 </div>
 
@@ -100,7 +100,7 @@
                     <input type="password" id="confirmar"  name="confirma" placeholder="digite a sua senha novamente">
                    <a> Aqui aparecerá a mensageem de erro</a> 
                 </div>
-                <button type="submit" id="submit">Enviar</button>
+                <button onclick="salvar()">Enviar</button>
                 <div>
                     <hr>
                 </div>
@@ -110,16 +110,17 @@
             </form>
         </div>
     </div>
-        <h2> Sucesso !!!!</h2>
-        <p>
-            Cadastrado com Sucesso
-        </p>
-        <button> OK </button>
+      <dialog>
+          <h2> Sucesso !!!!</h2>
+          <p>
+              Cadastrado com Sucesso
+          </p>
+          <button> OK </button>
 
-    </dialog>
-    
-    <script src="js/cadastros.js"></script>
-     
+      </dialog>
+      
+    <script src="js/cadastroUm.js"></script>
+    <script src="js/jquery.js"></script>
 
 
 </body>
