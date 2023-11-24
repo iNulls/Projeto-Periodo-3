@@ -350,7 +350,32 @@ function CloseModal(){
 
 // Salvar LocalStorage //
 
-function salvar() {
-      localStorage.setItem("usuario", document.querySelector("#usuario").value);
-      localStorage.setItem("senha", document.querySelector("#senha").value);
+let nome = document.querySelector("#nome")
+let labelNome = document.querySelector("#labelNome")
+
+let dataNascimento = document.querySelector("#dataNascimento")
+let labelDataNasc = document.querySelector("#labelDataNasc")
+
+let cpf = document.querySelector("#cpf")
+let labelCPF = document.querySelector("#labelCPF")
+
+let usuario = document.querySelector("#usuario")
+let labelUsuario = document.querySelector("#labelUsuario")
+
+let senha = document.querySelector("#senha")
+let labelSenha = document.querySelector("#labelSenha")
+
+function cadastrar() {
+    let listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]")
+
+    listaUser.push(
+    {
+      nomeCad: nome.value,
+      cpfCad: cpf.value,
+      userCad: usuario.value,
+      senhaCad: senha.value
+    }
+    )
+
+    localStorage.setItem("listaUser", JSON.stringify(listaUser))
     }

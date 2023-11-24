@@ -1,16 +1,16 @@
 function entrar(){
 	let usuario = document.querySelector("#usuario")
-	let userLabel = document.querySelector("#userLabel")
+	let labelUsuario = document.querySelector("#labelUsuario")
 
 	let senha = document.querySelector("#senha")
-	let senhaLabel = document.querySelector("#senhaLabel")
+	let labelSenha = document.querySelector("#labelSenha")
 
 	let msgError = document.querySelector("#msgError")
 	let listaUser = []
 
 	let userValid = {
 		nome: "",
-		user: "",
+		usuario: "",
 		senha: ""
 	}
 
