@@ -177,7 +177,13 @@ function cadastrar() {
 
     localStorage.setItem("listaUser", JSON.stringify(listaUser))
 
-    alert("Cadastrado com Sucesso!!!")
+       Modal();
+       CloseModal();
+        setTimeout(function(){
+        location.href="login.html";
+        }, 6000);
+       
+      
 
      } else {
       alert("Preencha os campos corretamente!!")

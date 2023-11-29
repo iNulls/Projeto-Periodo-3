@@ -80,3 +80,9 @@ function errorInput(input, message){
   formItem.className = "form-content error"
 
 }
+
+function logar() {
+  document.querySelector("#usuario", "#senha").value;
+    if ("#usuario", "#senha" === )
+
+}
