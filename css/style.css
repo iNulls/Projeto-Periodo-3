@@ -78,6 +78,35 @@ body {
     #check:checked ~ .menu {right: 0;}
 }
 
+
+/* estilizacao do sub-menu */
+.sub-menu-1{
+    display:none;
+   
+}
+nav ul li:hover .sub-menu-1{
+    display:block;
+    position:absolute;
+    background-color: #d91b0d;
+    margin-top: 6px;
+    margin-left: -47px;
+
+}
+nav ul li:hover .sub-menu-1 ul{
+    display:block;
+    
+}
+nav ul li:hover .sub-menu-1 ul li{
+      width: 150px;
+      text-align: center;
+      border-radius: 4px;
+}
+nav ul li:hover .sub-menu-1 ul li:hover{
+    background-color:  #d91b0d;
+}
+/* fim da estilizacao do sub-menu */
+
+
 /* estilizacao do carrossel */
 section.slider{
     margin: 0 auto;

@@ -62,7 +62,7 @@ img {
   background-color: hsla(0, 79%, 26%, 0.01);
   border: 2px solid rgb(29, 35, 214);
   padding: 2.5rem 1rem;
-  color: black;
+  color: rgb(255, 255, 255);
   border-radius: 1rem;
   backdrop-filter: blur(16px);
 }
@@ -106,7 +106,7 @@ img {
 }
 
 .login__input::placeholder {
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .login__box i {
@@ -132,7 +132,7 @@ img {
 .login__check-input {
   width: 1rem;
   height: 1rem;
-  accent-color: black;
+  accent-color: rgb(255, 255, 255);
 }
 
 .login__forgot {
@@ -160,7 +160,7 @@ img {
 }
 
 .login__register a {
-  color: black;
+  color: rgb(255, 255, 255);
   font-weight: 500;
 }
 
@@ -181,4 +181,8 @@ img {
   .login__title {
     margin-bottom: 2rem;
   }
+}
+a{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
 }

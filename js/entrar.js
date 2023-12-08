@@ -1,3 +1,6 @@
+const modal = document.querySelector("dialog")
+const buttonClose = document.querySelector("dialog button")
+
 function entrar(){
 	let usuario = document.querySelector("#usuario")
 	let labelUsuario = document.querySelector("#labelUsuario")
@@ -26,17 +29,26 @@ function entrar(){
 		}
 	})
 
-	let userLogado = JSON.parse(localStorage.getItem("userLogado"))
-	let logado = document.querySelector("#logado")
-		logado.innerHTML = "${serLogado.nome}"
-
 	if(usuario.value == userValid.user && senha.value == userValid.senha){
-		window.location.href = "index.html"
 
+		modal.showModal()
+		setTimeout(function(){
+        location.href = "logado.html";
+        }, 5000);
+		
+	
 		let token = Math.random().toString(16).substr(2)
 		localStorage.setItem("token", token)
+
 		localStorage.setItem("userLogado", JSON.stringify(userValid))
-		location.href = "logado.html";
+
+		
+		let userLogado = JSON.parse(localStorage.getItem("userLogado"))
+
+		let logado = document.querySelector("#logado")
+
+		logado.innerHTML = `Bem Vindo ${userLogado.nome}`
+		
 	} else {
 		userLabel.setAttribute("style", "color: red")
 		usuario.setAttribute("style", "border-color: red")
@@ -47,3 +59,4 @@ function entrar(){
 		usuario.focus()
 	}
 }
+

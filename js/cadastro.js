@@ -44,6 +44,7 @@ const enderecoInput=document.querySelector('#endereco')
 const emailInput=document.querySelector('#email')
 const usuarioInput=document.querySelector('#usuario')
 const passwordInput=document.querySelector('#senha')
+const modal = document.querySelector("dialog")
 
 form.addEventListener("submit",(event)=>{
 	event.preventDefault();
@@ -480,15 +481,9 @@ function checkForm() {
 	});
 
 	if(isValid){
-		cadastrar()
-
-		Modal();
-       CloseModal();
-        setTimeout(function(){
-        location.href="login.html";
-        }, 6000);
+		cadastrar();
 	} else {
-		alert("Fudeo")
+		alert("Preencha os campos corretamente")
 	}
 }
 
@@ -503,6 +498,10 @@ function cadastrar() {
       senhaCad: senha.value
     }
     )
+		modal.showModal()
+		setTimeout(function(){
+        location.href = "login.html";
+        }, 5000);
 
     localStorage.setItem("listaUser", JSON.stringify(listaUser))
    }
