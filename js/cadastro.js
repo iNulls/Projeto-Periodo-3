@@ -22,8 +22,17 @@ let labelUsuario = document.querySelector("#labelUsuario")
 let senha = document.querySelector("#senha")
 let labelSenha = document.querySelector("#labelSenha")
 
+let validNome = false
+let validDataNasc = false
+let validMaterno = false
+let validCPF = false
+let validCelular = false
+let validEmail = false
+let validUsuario = false
+let validSenha = false
+let validConfirma = false
 
-const form=document.querySelector('#form')
+
 const nomeInput=document.querySelector('#nome')
 const dataNascInput=document.querySelector('#dataNascimento')
 const generoInput=document.querySelector('#genero')
@@ -39,21 +48,12 @@ const passwordInput=document.querySelector('#senha')
 form.addEventListener("submit",(event)=>{
 	event.preventDefault();
 
-		
-	ValidarNome();
-	ValidarDataNascimento();
-	ValidarGenero();
-	ValidarNomeMaterno();
-	ValidarCPF();
-	//ValidarCelular();
-	ValidarEmail();
-	ValidarUsuario();
-	ValidarSenha();
 
-	
+	checkForm();
+
 	// Se todos os campos estiverem preenchidos envie o form
 
-	form.submit();
+
 })
 
 
@@ -77,12 +77,14 @@ function ValidarNome(){
 		labelNome.setAttribute("style", "color: green")
     	labelNome.innerHTML = "Nome Completo"
     	nome.setAttribute("style", "border-color: green")
+		
 		return;
 	}
 	else{
 		labelNome.setAttribute("style", "color: red")
     	labelNome.innerHTML = "Nome *Insira seu Nome Completo"
     	nome.setAttribute("style", "border-color: red")
+		
 		return;
 
 	}
@@ -96,11 +98,11 @@ function ValidaNomeRegex(nome){
 	const nomeRegex = new RegExp(/^[a-zA-Z\s]{15,60}$/,"");
 	
 	if (nomeRegex.test(nome)){
-
+		validNome = true
 		return true;
 	}
 	else{
-		
+		validNome = false
 		return false;
 	}
 
@@ -129,12 +131,14 @@ function ValidarDataNascimento(){
 		labelDataNasc.setAttribute("style", "color: green")
 	    labelDataNasc.innerHTML = "Data de Nascimento"
 	    dataNascimento.setAttribute("style", "border-color: green")
+		
 		return;
 	}
 	else{
 		labelDataNasc.setAttribute("style", "color: red")
 	    labelDataNasc.innerHTML = "*Insira data completa"
 	    dataNascimento.setAttribute("style", "border-color: red")
+		
 		return;
 	}
 }
@@ -148,11 +152,11 @@ function ValidaDataNascRegex(dataNasc){
 		const dataNascRegex = new RegExp(/^((?:[0-9]){2})\/((?:[0-9]){2})\/((?:[0-9]){4})$/)
 		
 		if (dataNascRegex.test(dataNasc)){
-			
+			validDataNasc = true
 			return true;
 		}
 		else{
-			
+			validDataNasc = false
 			return false;
 		}	
 	}
@@ -187,12 +191,14 @@ function ValidarNomeMaterno(){
 		labelMaterno.setAttribute("style", "color: green")
 	    labelMaterno.innerHTML = "Nome Mãe"
 	    nomeMaterno.setAttribute("style", "border-color: green")
+		
 		return;
 	}
 	else{
 		labelMaterno.setAttribute("style", "color: red")
 	    labelMaterno.innerHTML = "Nome Mãe *Insira no minimo o Nome e Sobrenome"
 	    nome.setAttribute("style", "border-color: red")
+		
 		return;
 	}
 }
@@ -205,11 +211,11 @@ function ValidaNomeMaternoRegex(nomematerno){
 	const nomeMaternoRegex = new RegExp(/^[a-zA-Z\s]{3,60}$/,"");
 	
 	if (nomeMaternoRegex.test(nomematerno)){
-		
+		validMaterno = true
 		return true;
 	}
 	else{
-		
+		validMaterno = false
 		return false;
 	}
 }
@@ -233,15 +239,16 @@ function ValidarCPF(){
 			labelCPF.setAttribute("style", "color: green")
     		labelCPF.innerHTML = "CPF"
     		cpf.setAttribute("style", "border-color: green")
+			
 			return;
 		}
 		else{
 			labelCPF.setAttribute("style", "color: red")
     		labelCPF.innerHTML = "CPF *Insira os 11 numeros validos"
     		cpf.setAttribute("style", "border-color: red")
+			
 			return;
 		}
-		//return;
 	}
 	else{
 		return;
@@ -260,9 +267,10 @@ function ValidaCpfRegex(cpf){
 	const cpfRegex = new RegExp(/^(?:[0-9]{3}\.){2}(?:[0-9]{3}\-)(?:[0-9]){2}$/)
 	
 	if (cpfRegex.test(cpf)){
-		
+		validCPF = true
 		return true;
 	}
+	validCPF = false
 	return false;
 }
 
@@ -327,12 +335,14 @@ function ValidarUsuario(){
 	    labelUsuario.setAttribute("style", "color: green")
 	    labelUsuario.innerHTML = "Usuario"
 	    usuario.setAttribute("style", "border-color: green")
+		
 		return;
 	}
 	else{
 	    labelUsuario.setAttribute("style", "color: red")
 	    labelUsuario.innerHTML = "Usuario *Invalido"
 	    usuario.setAttribute("style", "border-color: red")
+		
 		return;
 	}
 }
@@ -345,9 +355,11 @@ function ValidaUsuarioRegex(usuario){
 	const usuarioRegex = new RegExp(/^[a-zA-Z\s]{3,6}$/,"");
 	
 	if (usuarioRegex.test(usuario)){
+		validUsuario = true
 		return true;
 	}
 	else{
+		validUsuario = false
 		return false;
 	}
 }
@@ -374,11 +386,13 @@ function ValidarEmail(){
 		labelEmail.setAttribute("style", "color: red")
 	    labelEmail.innerHTML = "Email *Invalido"
 	    email.setAttribute("style", "border-color: red")
+	    
 	    return;
 	} else {
 		labelEmail.setAttribute("style", "color: green")
 	    labelEmail.innerHTML = "Email"
 	    email.setAttribute("style", "border-color: green")
+	    
 	    return;
 	}
 }
@@ -392,11 +406,11 @@ function ValidaEmailRegex(email){
 	const emailRegex = new RegExp(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]\.[a-zA-Z]{2,60}$/);
 
 	if (emailRegex.test(email)){
-
+		validEmail = true
 		return true;
 	} else {
-
-	return false;
+		validEmail = false
+		return false;
 	}
 }
 
@@ -417,12 +431,14 @@ function ValidarSenha(){
 	    labelSenha.setAttribute("style", "color: green")
 	    labelSenha.innerHTML = "Senha"
 	    senha.setAttribute("style", "border-color: green")
+		validSenha = true
 		return;
 	}
 	else{
 	    labelSenha.setAttribute("style", "color: red")
 	    labelSenha.innerHTML = "Senha *Invalida insira no minimo 6 caracteres"
 	    senha.setAttribute("style", "border-color: red")
+		validSenha = false
 		return;
 	}
 }
@@ -435,11 +451,59 @@ function ValidaSenha(password, minDigitos){
 		labelConfirmarSenha.setAttribute("style", "color: green")
 	    labelConfirmarSenha.innerHTML = "Confirmar Senha"
 	    confirmar.setAttribute("style", "border-color: green")
+		validConfirma = true
 		return true;
 	}
 		labelConfirmarSenha.setAttribute("style", "color: red")
 	    labelConfirmarSenha.innerHTML = "Confirmar Senha *As senhas não são iguais"
 	    confirmar.setAttribute("style", "border-color: red")
+	 	validConfirma = false
 	 	return false;
 
+}
+
+function checkForm() {
+
+	ValidarNome();
+	ValidarDataNascimento();
+	ValidarGenero();
+	ValidarNomeMaterno();
+	ValidarCPF();
+	ValidarEmail();
+	ValidarUsuario();
+	ValidarSenha();
+
+	const formItems = form.querySelectorAll(".form-content")
+
+	const isValid = [...formItems].every( (item) => {
+		return item.className === "form-content"
+	});
+
+	if(isValid){
+		cadastrar()
+
+		Modal();
+       CloseModal();
+        setTimeout(function(){
+        location.href="login.html";
+        }, 6000);
+	} else {
+		alert("Fudeo")
+	}
+}
+
+function cadastrar() {
+    if(validNome && validUsuario && validSenha){
+    let listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]")
+
+    listaUser.push(
+    {
+      nomeCad: nome.value,
+      userCad: usuario.value,
+      senhaCad: senha.value
+    }
+    )
+
+    localStorage.setItem("listaUser", JSON.stringify(listaUser))
+   }
 }

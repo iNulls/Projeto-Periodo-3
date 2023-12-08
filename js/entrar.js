@@ -26,15 +26,17 @@ function entrar(){
 		}
 	})
 
+	let userLogado = JSON.parse(localStorage.getItem("userLogado"))
+	let logado = document.querySelector("#logado")
+		logado.innerHTML = "${serLogado.nome}"
+
 	if(usuario.value == userValid.user && senha.value == userValid.senha){
-		alert("Funcionou Tropa")
-		window.location.href="index.html"
+		window.location.href = "index.html"
 
 		let token = Math.random().toString(16).substr(2)
 		localStorage.setItem("token", token)
-
 		localStorage.setItem("userLogado", JSON.stringify(userValid))
-		
+		location.href = "logado.html";
 	} else {
 		userLabel.setAttribute("style", "color: red")
 		usuario.setAttribute("style", "border-color: red")
