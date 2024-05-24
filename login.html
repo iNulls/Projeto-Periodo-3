@@ -11,7 +11,7 @@
     <div class="login">
         <img src="img/TELECALL-01.jpg" alt="image" class="login__bg">
 
-        <form action="" class="login__form">
+        <form action="php/login.php" method="post" class="login__form">
          <h4><a href="index.html">Voltar</a></h4>
            <h1 class="login__title">Login</h1>
 
@@ -33,8 +33,11 @@
                  <label for="user-check" class="login__check-label">Remember me</label>
               </div>
            </div>
-
-           <button onclick="entrar(); return false" class="login__button">Entrar</button>
+           <div class="rec_senha">
+            <a class="rec_senha" href="recuperar.html">Esqueci minha senha</a>
+         </div>
+           <input type="submit" value="Login" class="login__button">
+           <input type="reset" class="limpar" value="Limpar">
 
            <div class="login__register">
               Não tem conta? <a href="cadastro.html">Cadastre-se</a>
