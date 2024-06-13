@@ -12,20 +12,30 @@
         <nav class="nav">
             <ul class='nav-bar'>
                 <input type='checkbox' id='check' />
-                <li class='logo'><a href='index.html'><img src='img/logo.png'/></a></li>
+                <li class='logo'><a href='index.php'><img src='img/logo.png'/></a></li>
                 <span class="menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="servicos.html">Serviços</a>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="servicos.php">Serviços</a>
                         <div class="sub-menu-1">
                               <ul>
-                                <li><a href="2fa.html">2FA</a></li>
-                                <li><a href="google.html">Google Verified</a></li>
-                                <li><a href="sms.html">SMS</a></li>
-                                <li><a href="mascara.html">Numero de Mascára</a></li>
-                              </ul>
+                                <li><a href="2fa.php">2FA</a></li>
+                                <li><a href="google.php">Google Verified</a></li>
+                                <li><a href="sms.php">SMS</a></li>
+                                <li><a href="mascara.php">Numero de Mascára</a></li>
+                                </ul>
+                                <?php if ($loggedIn): ?>
+                                <li class="dropdown">
+                                    <a href="#" class="dropbtn"><?php echo htmlspecialchars($username); ?></a>
+                                    <div class="dropdown-content">
+                                        <a href="profile.php">Editar Perfil</a>
+                                        <a href="logout.php">Sair</a>
+                                    </div>
+                                </li>
+                                    <?php else: ?>
+                                        <li><a href="login.php">Login</a></li>
+                                    <?php endif; ?>
                          </div>
                     </li>
-                    <li><a href="login.html">Login</a></li>
                     <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
                 </span>
                 <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
@@ -154,10 +164,10 @@
                 <div class="footer-col">
                     <h4>Serviços</h4>
                     <ul>
-                        <li><a href="2fa.html">2FA</a></li>
-                        <li><a href="google.html">Google Verified</a></li>
-                        <li><a href="sms.html">SMS</a></li>
-                        <li><a href="mascara.html">Numero de Mascára</a></li>
+                        <li><a href="2fa.php">2FA</a></li>
+                        <li><a href="google.php">Google Verified</a></li>
+                        <li><a href="sms.php">SMS</a></li>
+                        <li><a href="mascara.php">Numero de Mascára</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

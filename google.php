@@ -12,20 +12,30 @@
         <nav class="nav">
             <ul class='nav-bar'>
                 <input type='checkbox' id='check' />
-                <li class='logo'><a href='index.html'><img src='img/logo.png'/></a></li>
+                <li class='logo'><a href='index.php'><img src='img/logo.png'/></a></li>
                 <span class="menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="servicos.html">Serviços</a>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="servicos.php">Serviços</a>
                         <div class="sub-menu-1">
                               <ul>
-                                <li><a href="2fa.html">2FA</a></li>
-                                <li><a href="google.html">Google Verified</a></li>
-                                <li><a href="sms.html">SMS</a></li>
-                                <li><a href="mascara.html">Numero de Mascára</a></li>
-                              </ul>
+                                <li><a href="2fa.php">2FA</a></li>
+                                <li><a href="google.php">Google Verified</a></li>
+                                <li><a href="sms.php">SMS</a></li>
+                                <li><a href="mascara.php">Numero de Mascára</a></li>
+                                </ul>
+                                <?php if ($loggedIn): ?>
+                                <li class="dropdown">
+                                    <a href="#" class="dropbtn"><?php echo htmlspecialchars($username); ?></a>
+                                    <div class="dropdown-content">
+                                        <a href="profile.php">Editar Perfil</a>
+                                        <a href="logout.php">Sair</a>
+                                    </div>
+                                </li>
+                                    <?php else: ?>
+                                        <li><a href="login.php">Login</a></li>
+                                    <?php endif; ?>
                          </div>
                     </li>
-                    <li><a href="login.html">Área do Cliente</a></li>
                     <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
                 </span>
                 <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
@@ -35,31 +45,40 @@
    <div class="container">
     <div class="column">
         <div class="row">
-            <h1>SMS PROGRAMAVEL</h1>
+            <h1>GOOGLE VERIFIED CALLS</h1>
             <h2>O que é?</h2>
-            <h3>Conecte-se com seus clientes.</h3>
-            <h4>É muito provável que você já tenha recebido uma
-                mensagem de texto de uma empresa ou organização.
-                Com uma API, qualquer empresa pode enviar mensagens
-                de texto e impactar clientes, prospects ou fornecedores
-                como parte de seu processo comercial.
-                Com essa ferramenta você envia mensagens de SMS com
-                as informações que o seu cliente precisa e com a
-                segurança, a velocidade e a confiabilidade que você
-                espera.</h4>
+            <h3>Chamadas verificadas.</h3>
+            <h4>Esse novo recurso do Google, exclusivo para
+                telefones Android, permite que empresas exibam
+                para o cliente na hora da chamada sua marca,
+                logotipo e até mesmo o motivo da chamada.
+                A Telecall é a primeira operadora de telecom no
+                Brasil a oferecer esse recurso do Google.</h4>
+            
+            <h2>O problema</h2>
+            <h3>Ligações de spam.</h3>
+            <h4><p>• O Brasil é o país que mais sofre com ligações
+                de spam no mundo.</p>
+            <p>• Desde 2017, as chamadas telefônicas de
+                spam no Brasil aumentaram 141%.</p>
+            <p>• O brasileiro recebe em média 49,9 ligações
+                de spam por mês.</p></h4>
+            
             <h2>Benefícios:</h2>
-            <h4><p>• Comunicação rápida, efetiva e escalável.</p>
-            <p>• Baixo custo.</p>
-            <p>• Alta taxa de entrega e leitura.</p>
-            <p>• Personalização de data, hora e conteúdo.</p>
-            <p>• Agendamento de campanhas.</p>
-            <p>• Interação bidirecional: recebimento de respostas.</p>
-            <p>• Plataforma user-friendly.</p>
-            <p>• Acompanhamento de métricas e relatórios.</p></h4>
+            <h3>• Estabeleça Confiança</h3>
+            <h4><p>Clientes são mais propensos a atender chamadas de organizações com os quais estão
+                familiarizadas e com as quais já tem relação.</p></h4>
+            <h3>• Agilize a Conexão</h3>
+            <h4><p>Quando o motivo da chamada é claro, a chance de o cliente atender é muito maior e a conexão
+                com ele mais rápida e eficiente.</p></h4>
+            <h3>• Melhore a Experiência do Cliente</h3>
+            <h4><p>O nome da marca, logotipo e a visualização do motivo da chamada oferecem uma experiencia
+                melhor e muito mais amigável para o cliente.</p>
+            </h4>
            
            
-            <h2>Quem usa?</h2>
-            <img src="img/sms.jpg" alt="sms" class="image">
+            <h2>Ligações indesejadas no Brasil</h2>
+            <img src="img/google.jpg" alt="google" class="graf">
         </div>
     </div>
 </div>
@@ -85,14 +104,14 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Serviços</h4>
-                <ul>
-                    <li><a href="2fa.html">2FA</a></li>
-                    <li><a href="google.html">Google Verified</a></li>
-                    <li><a href="sms.html">SMS</a></li>
-                    <li><a href="mascara.html">Numero de Mascára</a></li>
-                </ul>
-            </div>
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="2fa.php">2FA</a></li>
+                        <li><a href="google.php">Google Verified</a></li>
+                        <li><a href="sms.php">SMS</a></li>
+                        <li><a href="mascara.php">Numero de Mascára</a></li>
+                    </ul>
+                </div>
             <div class="footer-col">
                 <h4> Contato</h4>
                 <div class="social-links">

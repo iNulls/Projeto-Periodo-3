@@ -7,26 +7,35 @@
     <title>Telecall</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" /></head>
-</head>
 <body>
     <header>
         <nav class="nav">
             <ul class='nav-bar'>
                 <input type='checkbox' id='check' />
-                <li class='logo'><a href='index.html'><img src='img/logo.png'/></a></li>
+                <li class='logo'><a href='index.php'><img src='img/logo.png'/></a></li>
                 <span class="menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="servicos.html">Serviços</a>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="servicos.php">Serviços</a>
                         <div class="sub-menu-1">
                               <ul>
-                                <li><a href="2fa.html">2FA</a></li>
-                                <li><a href="google.html">Google Verified</a></li>
-                                <li><a href="sms.html">SMS</a></li>
-                                <li><a href="mascara.html">Numero de Mascára</a></li>
-                              </ul>
+                                <li><a href="2fa.php">2FA</a></li>
+                                <li><a href="google.php">Google Verified</a></li>
+                                <li><a href="sms.php">SMS</a></li>
+                                <li><a href="mascara.php">Numero de Mascára</a></li>
+                                </ul>
+                                <?php if ($loggedIn): ?>
+                                <li class="dropdown">
+                                    <a href="#" class="dropbtn"><?php echo htmlspecialchars($username); ?></a>
+                                    <div class="dropdown-content">
+                                        <a href="profile.php">Editar Perfil</a>
+                                        <a href="logout.php">Sair</a>
+                                    </div>
+                                </li>
+                                    <?php else: ?>
+                                        <li><a href="login.php">Login</a></li>
+                                    <?php endif; ?>
                          </div>
                     </li>
-                    <li><a href="login.html">Área do Cliente</a></li>
                     <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
                 </span>
                 <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
@@ -36,26 +45,28 @@
    <div class="container">
     <div class="column">
         <div class="row">
-            <h1>2FA</h1>
-            <h2>Autenticação de dois fatores</h2>
-            <h4>O 2FA é um procedimento de segurança que garante que serão
-                necessários 2 fatores únicos para liberação de uma ação. O
-                primeiro fator é a senha que o usuário e o segundo pode ser
-                autenticado via token, via detecção de impressão digital,
-                reconhecimento facial, código enviado via sms, entre outros.</h4>
-            <h2>O 2FA permite que você:</h2>
-            <h4><p>• Envie uma senha via SMS, voz ou e-mail para autenticação do usuário.</p>
-            <p>• Adicione uma camada extra de segurança além da senha pessoal.</p>
-            <p>• Ofereça maior segurança para usuários</p></h4>
-            <h2>Fortaleça a estratégia de segurança de seu negócio.</h2>
-            <h4>Adicionar um número de telefone de recuperação a uma
-                conta individual pode bloquear até:
-                100% dos bots automatizados,
-                99% dos ataques de phishing em massa,
-                e 66% dos ataques direcionados.</p>
-            </h4>
+            <h1>Número Máscara</h1>
+                <h2>Proteja identidades profissionais</h2>
+                <h4>Garanta aos seus clientes a capacidade de fazer chamadas e enviar
+                    mensagens sem expor seus números de telefone pessoais.
+                    <p>• Mascare um número de telefone para interações com mais
+                    privacidade.</p>
+                    <p>• Permite que empresas façam negócios usando menos
+                    números de telefone.</p>
+                    <p>• Oferece uma experiência mais segura e profissional</p></h4>
+                    <h2>Recursos Avançados</h2>
+                    <h4><p>• SMS – Número máscara é totalmente funcional para chamadas de voz e SMS.</p>
+                        <p>• Geo Match – Combine o código do país do número mascarado com o da chamada de origem
+                        passando pro cliente a impressão de que vocês estão na mesma região.</p>
+                        <p>• Gestão de Sessões – Habilite números máscara permanentes, bloqueie chamadas indesejadas,
+                        validade de sessão e etc.</p>
+                        <p>• Relatórios – Acesso direto do cliente à relatórios detalhados.</p>
+                        <p>• Números Simultâneos - Use o mesmo número máscara em várias ligações simultâneas.</p>
+                        <p>• Triagem de Conteúdo – Recurso SMS onde você pode sinalizar conteúdos sensíveis para proteger
+                        dados do cliente.</p>
+                        <p>• Escalabilidade Ilimitada – compre e adicione números conforme necessário.</p></h4>
             <h2>Quem usa?</h2>
-            <img src="img/2fa.jpg" alt="2fa" class="image">
+            <img src="img/mascara.jpg" alt="mascara" class="image">
         </div>
     </div>
 </div>
@@ -81,14 +92,14 @@
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>Serviços</h4>
-                <ul>
-                    <li><a href="2fa.html">2FA</a></li>
-                    <li><a href="google.html">Google Verified</a></li>
-                    <li><a href="sms.html">SMS</a></li>
-                    <li><a href="mascara.html">Numero de Mascára</a></li>
-                </ul>
-            </div>
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="2fa.php">2FA</a></li>
+                        <li><a href="google.php">Google Verified</a></li>
+                        <li><a href="sms.php">SMS</a></li>
+                        <li><a href="mascara.php">Numero de Mascára</a></li>
+                    </ul>
+                </div>
             <div class="footer-col">
                 <h4> Contato</h4>
                 <div class="social-links">
