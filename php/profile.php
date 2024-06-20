@@ -36,10 +36,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Redirecionar para a página de perfil com uma mensagem de sucesso
         $_SESSION['message'] = 'Informações atualizadas com sucesso!';
-        header('Location: index.html');
+        header('Location: index.php');
         exit();
     } elseif (isset($_POST['cancel'])) {
-        header('Location: index.html');
+        header('Location: index.php');
         exit();
     } elseif (isset($_POST['reset'])) {
         $newUserData = $currentUserData;

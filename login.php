@@ -12,17 +12,17 @@
         <img src="img/TELECALL-01.jpg" alt="image" class="login__bg">
 
         <form action="php/login.php" method="post" class="login__form">
-         <h4><a href="index.html">Voltar</a></h4>
+         <h4><a href="index.php">Voltar</a></h4>
            <h1 class="login__title">Login</h1>
 
            <div class="login__inputs">
               <div class="login__box">
-                 <input id="usuario" type="usuario" placeholder="Usuario" required class="login__input">
+                 <input id="usuario" type="usuario" name="usuario" maxlength="6" placeholder="Usuario" required class="login__input">
                  <i class="ri-mail-fill"></i>
               </div>
 
               <div class="login__box">
-                 <input id="senha" type="password" placeholder="Senha" required class="login__input">
+                 <input id="senha" type="password" name="senha" maxlength="8" placeholder="Senha" required class="login__input">
                  <i class="ri-lock-2-fill"></i>
               </div>
            </div>
@@ -34,19 +34,21 @@
               </div>
            </div>
            <div class="rec_senha">
-            <a class="rec_senha" href="recuperar.html">Esqueci minha senha</a>
+            <a class="rec_senha" href="recuperar.php">Esqueci minha senha</a>
          </div>
            <input type="submit" value="Login" class="login__button">
            <input type="reset" class="limpar" value="Limpar">
 
            <div class="login__register">
-              Não tem conta? <a href="cadastro.html">Cadastre-se</a>
+              Não tem conta? <a href="cadastro.php">Cadastre-se</a>
            </div>
         </form>
-     </div>
+   </div>
+
 </body>
    <footer>
       <script src="js/entrar.js"></script>
+      <script src="js/form.js"></script>
    </footer>
       
 </html>

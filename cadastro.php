@@ -16,7 +16,7 @@
             <section class='header'>
                 <h2>Cadastre-se</h2>
             </section>
-            <form id="form" class="form">    
+            <form action="php/processo_cadastro.php" method="POST" id="form" class="form">    
                 <!--DARKMODE-->
                     <div>
                         <input type="checkbox" class="checkbox" id="chk" />
@@ -34,21 +34,21 @@
 
                 <div class="form-content">
                    <label id="labelNome" for="nome"> Nome Completo:</label>
-                    <input type="text" id="nome" placeholder="Digite o nome do completo" oninput="maiuscula(this)" required>
+                    <input type="text" id="nome" name="nome" placeholder="Digite o nome do completo" oninput="maiuscula(this)" required>
                 </div>
 
                 <!--Nascimento-->
 
                 <div class="form-content">
                     <label id="labelDataNasc" for="dataNascimento"> Data de nascimento:</label>
-                    <input type="date" id="dataNascimento" placeholder="Digite a data de nascimento (dd/mm/aaaa)" max="2005-12-31" required>      
+                    <input type="date" id="dataNascimento" name="dataNascimento" placeholder="Digite a data de nascimento (dd/mm/aaaa)" max="2005-12-31" required>      
                 </div>
                 
                 <!--Sexo-->
 
                 <div class="form-content" >
                     <label for="genero"> Gênero:</label>
-                    <select name="genero" id="genero" placeholder="Escolha">
+                    <select name="genero" id="genero" name="genero" placeholder="Escolha">
                         <option value="" disabled selected></option>
                         <option value="masc">Masculino</option>
                         <option value="fem">Feminino</option>
@@ -60,14 +60,14 @@
 
                 <div class="form-content">
                     <label id="labelMaterno" for="nomeMaterno"> Nome da Mãe:</label>
-                    <input type="text" id="nomeMaterno" placeholder="Digite o nome da sua mãe" oninput="maiuscula(this)" required>
+                    <input type="text" id="nomeMaterno" name="nomeMaterno" placeholder="Digite o nome da sua mãe" oninput="maiuscula(this)" required>
                 </div>
 
                 <!--CPF-->
 
                 <div class="form-content">
                     <label id="labelCPF" for="cpf"> CPF:</label>
-                    <input type="text" id="cpf" placeholder="Digite o seu cpf" onblur="valida(this)" required>
+                    <input type="text" id="cpf" name="cpf" placeholder="Digite o seu cpf" onblur="valida(this)" required>
                 </div>   
 
                 <!--Telefones-->
@@ -124,14 +124,14 @@
 
                 <div class="form-content">
                     <label id="labelEmail" for="email"> Email:</label>
-                    <input type="text"  id="email" placeholder="Digite o seu email" required> 
+                    <input type="text"  id="email" name="email" placeholder="Digite o seu email" required> 
                 </div>
 
                 <!--Login e Senha-->
 
                 <div class="form-content">
                     <label id="labelUsuario" for="usuario"> Usuário:</label>
-                    <input type="text" id="usuario" maxlength="6" placeholder="Digite o nome do usuario" onkeydown="ajustaLoginSenha(this)" , onkeypress="ajustaLoginSenha(this)" ,
+                    <input type="text" id="usuario" name="usuario" maxlength="6" placeholder="Digite o nome do usuario" onkeydown="ajustaLoginSenha(this)" , onkeypress="ajustaLoginSenha(this)" ,
                     onkeyup="ajustaLoginSenha(this)" required>
                  </div>
 
@@ -148,14 +148,14 @@
                     onkeypress="ajustaLoginSenha(this)" , onkeyup="ajustaLoginSenha(this)" required> 
                 </div>
 
-                <button type="submit" id="submit" return false>Salvar</button>
+                <button type="submit" id="submit" name="submit">Salvar</button>
                 <button type="reset" class="btn btn-dark">Limpar</button>
 
                 <div>
-                    <a href="index.html" class="btn btn-primary btn-lg mt-3">Voltar para tela Principal</a>
+                    <a href="index.php" class="btn btn-primary btn-lg mt-3">Voltar para tela Principal</a>
                 </div>
                 <div class="links">
-                    <a href="Login.html" class="criarconta">Já possui conta? Entre aqui</a>
+                    <a href="login.php" class="criarconta">Já possui conta? Entre aqui</a>
                 </div>
             </form>
         </div>

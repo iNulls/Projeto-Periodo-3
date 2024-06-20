@@ -28,14 +28,14 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `endereco` (
-  `Id_endereco` int(11) NOT NULL,
+  `id_endereco` int(11) NOT NULL,
   `CEP` varchar(11) DEFAULT NULL,
-  `Logradouro` varchar(55) DEFAULT NULL,
-  `Complemento` varchar(30) DEFAULT NULL,
-  `Numero` varchar(10) DEFAULT NULL,
-  `Bairro` varchar(45) DEFAULT NULL,
-  `Cidade` varchar(45) DEFAULT NULL,
-  `Estado` varchar(45) DEFAULT NULL
+  `logradouro` varchar(55) DEFAULT NULL,
+  `complemento` varchar(30) DEFAULT NULL,
+  `numero` varchar(10) DEFAULT NULL,
+  `bairro` varchar(45) DEFAULT NULL,
+  `cidade` varchar(45) DEFAULT NULL,
+  `estado` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -45,12 +45,12 @@ CREATE TABLE `endereco` (
 --
 
 CREATE TABLE `log` (
-  `Id_log` int(11) NOT NULL,
-  `DataHora` datetime DEFAULT NULL,
-  `Descricao2FA` varchar(50) DEFAULT NULL,
-  `Resultado` text DEFAULT NULL,
-  `Descricao` text DEFAULT NULL,
-  `Id_user` int(11) DEFAULT NULL
+  `id_log` int(11) NOT NULL,
+  `dataHora` datetime DEFAULT NULL,
+  `descricao2FA` varchar(50) DEFAULT NULL,
+  `resultado` text DEFAULT NULL,
+  `descricao` text DEFAULT NULL,
+  `id_user` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -60,8 +60,8 @@ CREATE TABLE `log` (
 --
 
 CREATE TABLE `pergunta2fa` (
-  `Id_pergunta2FA` int(11) NOT NULL,
-  `Pergunta` varchar(100) DEFAULT NULL
+  `id_pergunta2FA` int(11) NOT NULL,
+  `pergunta` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -71,20 +71,20 @@ CREATE TABLE `pergunta2fa` (
 --
 
 CREATE TABLE `usuario` (
-  `Id_user` int(11) NOT NULL,
-  `Nome` varchar(100) DEFAULT NULL,
+  `id_user` int(11) NOT NULL,
+  `nome` varchar(100) DEFAULT NULL,
   `CPF` varchar(11) DEFAULT NULL,
-  `DataNascimento` date DEFAULT NULL,
-  `Sexo` char(1) DEFAULT NULL,
-  `NomeMaterno` varchar(100) DEFAULT NULL,
-  `Email` varchar(50) DEFAULT NULL,
-  `Celular` varchar(11) DEFAULT NULL,
-  `Telefone` varchar(10) DEFAULT NULL,
-  `Login` varchar(50) DEFAULT NULL,
-  `Senha` varchar(50) DEFAULT NULL,
-  `TipoUsuario` char(1) DEFAULT NULL,
-  `Id_endereco` int(11) DEFAULT NULL,
-  `Id_pergunta2FA` int(11) DEFAULT NULL
+  `dataNascimento` date DEFAULT NULL,
+  `sexo` char(1) DEFAULT NULL,
+  `nomeMaterno` varchar(100) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `celular` varchar(11) DEFAULT NULL,
+  `telefone` varchar(10) DEFAULT NULL,
+  `login` varchar(50) DEFAULT NULL,
+  `senha` varchar(50) DEFAULT NULL,
+  `tipoUsuario` char(1) DEFAULT NULL,
+  `id_endereco` int(11) DEFAULT NULL,
+  `id_pergunta2FA` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
